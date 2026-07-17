@@ -20,7 +20,7 @@ class Animal:
             Animal.die(self)
 
     @staticmethod
-    def die(animal: "Animal") -> None:
+    def die(victim: "Animal") -> None:
         Animal.alive.remove(victim)
 
     def __repr__(self) -> str:
