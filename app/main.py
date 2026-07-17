@@ -29,7 +29,7 @@ class Animal:
             f"Health: {self.health}, "
             f"Hidden: {self.hidden}}}"
         )
-    
+
 
 class Herbivore(Animal):
 
@@ -41,6 +41,6 @@ class Herbivore(Animal):
 class Carnivore(Animal):
 
     def bite(self, victim: Herbivore) -> None:
-        if isinstance(victim, Herbivore) and victim in Animal.alive and not victim.hidden:
+        if isinstance(victim, Herbivore) and victim.hidden is False:
             victim.take_damage(25)
-        
+
