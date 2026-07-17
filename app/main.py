@@ -31,7 +31,16 @@ class Animal:
         )
     
 
-class herbivore(Animal):
+class Herbivore(Animal):
 
     def hide(self) -> None:
-        self.hidden = True
+        if self in Animal.alive:
+            self.hidden = not self.hidden
+
+
+class Carnivore(Animal):
+
+    def bite(self, victim: Herbivore) -> None:
+        if isinstance(victim, Herbivore) and victim in Animal.alive and not victim.hidden:
+            victim.take_damage(25)
+        
