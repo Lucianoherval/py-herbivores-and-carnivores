@@ -43,4 +43,3 @@ class Carnivore(Animal):
     def bite(self, victim: Herbivore) -> None:
         if isinstance(victim, Herbivore) and victim.hidden is False:
             victim.take_damage(25)
-
